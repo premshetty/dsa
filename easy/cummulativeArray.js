@@ -38,3 +38,20 @@ function cummulativeSum(arr) {
 }
 
 console.log(cummulativeSum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+//recursion
+
+let finalarray = []
+function cummulativesum(arr, cri, prev) {
+    let currentindex = cri;
+    const maxindex = arr.length - 1;
+    let prevvalue = prev;
+    prevvalue = prev + arr[currentindex]
+    finalarray.push(prevvalue)
+    if (currentindex < maxindex) {
+        currentindex++
+        cummulativesum(arr, currentindex, prevvalue)
+    }
+    return finalarray
+}
+console.log(cummulativesum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 0, 0));
