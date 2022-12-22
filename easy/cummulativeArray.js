@@ -7,6 +7,8 @@
 // Initial Array: [1, 1, 1, 1, 1]
 // Cumulative Sum: [1, 2, 3, 4, 5]
 
+
+// o(n2)
 function cummulativeSum(arr) {
     let cummulativearray = [];
     for (let i = 0; i < arr.length; i++) {
@@ -20,3 +22,19 @@ function cummulativeSum(arr) {
 }
 
 console.log(cummulativeSum([1, 2, 3, 4, 5, 6]));
+
+
+//o(n)
+
+function cummulativeSum(arr) {
+    let cummulativearray = [];
+    let previoustotal = 0;
+    for (let i = 0; i < arr.length; i++) {
+        const newvalue = previoustotal + arr[i];
+        previoustotal = newvalue
+        cummulativearray.push(newvalue)
+    }
+    return cummulativearray;
+}
+
+console.log(cummulativeSum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
